@@ -1,0 +1,70 @@
+@import "nullStyle.scss";
+
+@mixin bord {
+  border: 1px solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+//Variables
+$align: center;
+$flexDisplay: flex;
+
+
+.block {
+  @include bord;
+  margin: 10px;
+  width: 30%;
+  display: $flexDisplay;
+  justify-content: space-around;
+
+
+  .block__item {
+    padding: 5%;
+    align-items: $align;
+
+    .block__button {
+      @include bord;
+      background: blue;
+      display: $flexDisplay;
+      justify-content: space-around;
+      width: 100px;
+      height: 30px;
+      align-items: $align;
+
+    }
+
+    .block__button:hover {
+      background: darkblue;
+    }
+
+
+    .block__pic {
+      width: 15px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .block__list {
+      @include bord;
+      display: none;
+
+      li {
+        margin: 5px;
+        padding: 2px;
+      }
+
+      li:hover {
+        background-color: lightslategray;
+      }
+    }
+  }
+
+  .block__item:hover .block__list {
+    display: block;
+  }
+}
+
+
